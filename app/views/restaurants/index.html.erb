@@ -2,7 +2,7 @@
 
 <h1>Listing Restaurants</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,12 +15,16 @@
 
   <tbody>
     <% @restaurants.each do |restaurant| %>
+
       <tr>
-        <td><%= restaurant.name %></td>
+        <td>
+          <%= link_to restaurant do %>
+            <%= restaurant.name %>
+          <% end %>
+        </td>
         <td><%= restaurant.address %></td>
         <td><%= restaurant.phone_number %></td>
         <td><%= restaurant.category %></td>
-        <td><%= link_to 'Show', restaurant %></td>
       </tr>
     <% end %>
   </tbody>
